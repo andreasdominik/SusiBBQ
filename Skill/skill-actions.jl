@@ -26,14 +26,42 @@ function Susi_BBQtimer_action(topic, payload)
     print_log("action Susi_BBQtimer_action() started.")
     publish_say(:skill_echo, get_intent(payload))
 
-    if ask_yes_or_no(:ask_echo_slots)
+    default_time = get_config_skill(CONFIG_BBQ_TIME, default=90, cast_to=Int)
+    round_time = extract_slot_value(SLOT_BBQ_TIME, payload, default=default_time)
+    wait_time = round_time / 2
 
-        slot_value = extract_slot_value(SLOT_BBQ_TIME, payload, default=:no_slot)
-        publish_say(:slot_echo_1, SLOT_BBQ_TIME, :slot_echo_2, slot_value)
-    else   # ask returns false
-        # do nothing
-    end
+    sound_wav = get_config_skill(CONFIG_BBQ_SIGNAL, default="bing.wav", cast_to=String)
+    sound_wav = joinpath(get_appdir(), "assets", sound_wav)
 
-    publish_end_session(:end_say)
+    puplish_say(:bbq_info_1, round_time, :bbq_info_2, :bbq_info_3)
+
+    # run beep sequence:
+    #
+    sleep(2)
+    publish_say(:bbq_1, wait=true)
+    sleep(5)
+
+    publish_play(sound_wav, wait=false)
+    sleep(round_time)
+    publish_say(:bbq_2, wait=false)
+    sleep(wait_time)
+    publish_play(sound_wav, wait=false)
+    sleep(round_time)
+    publish_say(:bbq_3, wait=false)
+    sleep(wait_time)
+    publish_play(sound_wav, wait=false)
+    sleep(round_time)
+    publish_say(:bbq_4, wait=false)
+    sleep(wait_time)
+    publish_play(sound_wav, wait=false)
+    sleep(round_time)
+    publish_say(:bbq_5, wait=false)
+    sleep(wait_time)
+    publish_play(sound_wav, wait=true)
+    sleep(2)
+    publish_play(sound_wav, wait=true)
+    sleep(2)
+
+    publish_end_session(:bbq_stop)
     return true
 end

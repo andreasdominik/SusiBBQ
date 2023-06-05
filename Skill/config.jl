@@ -20,7 +20,7 @@ const SLOT_BBQ_TIME = "bbq_time"
 # name of entries in config.ini:
 #
 const CONFIG_BBQ_TIME = "bbq_time"
-
+const CONFIG_BBQ_SIGNAL = "bbq_signal"
 #
 # link between actions and intents:
 # intent is linked to action::Funktion
