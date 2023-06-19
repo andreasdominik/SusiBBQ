@@ -42,26 +42,34 @@ function Susi_BBQtimer_action(topic, payload)
     sleep(5)
 
     publish_play(sound_wav, wait=false)
-    sleep(round_time)
+
+    sleep(wait_time)
     publish_say(:bbq_2, wait=false)
     sleep(wait_time)
+    
     publish_play(sound_wav, wait=false)
-    sleep(round_time)
+    sleep(wait_time)
     publish_say(:bbq_3, wait=false)
     sleep(wait_time)
+    
     publish_play(sound_wav, wait=false)
-    sleep(round_time)
+    sleep(wait_time)
     publish_say(:bbq_4, wait=false)
     sleep(wait_time)
+    
     publish_play(sound_wav, wait=false)
-    sleep(round_time)
+    sleep(wait_time)
     publish_say(:bbq_5, wait=false)
     sleep(wait_time)
+    
     publish_play(sound_wav, wait=true)
-    sleep(2)
+    sleep(1)
     publish_play(sound_wav, wait=true)
-    sleep(2)
 
-    publish_end_session(:bbq_stop)
+    publish_say(:bbq_6, wait=true)
+    sleep(5)
+    publish_say(:bbq_stop)
+
+    publish_end_session(" ")
     return true
 end

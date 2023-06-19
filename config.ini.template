@@ -19,86 +19,71 @@
 #      (maybe not neeeded?)
 #
 [global]
-this_skill_name = SusiWeekly
+this_skill_name = SusiBBQ
 
-# actions to be performed for each profile:
-#
-default = saytime
-summer = saytime1, saytime2
-winter = light1on, light1off, light2on, light2off
-irrigation = saytime1, saytime2
+bbq_time = 90
+bbq_signal = beep4.wav
 
-# actions:
-#
-saytime1:command = wie spät ist es
-saytime1:days = mo, tu, we, th, fr, sa, su
-saytime1:times = 18:25, 18:30
-saytime1:fuzzy = 30
-
-saytime2:command = wie spät ist es
-saytime2:days = mo, tu, we, th, fr, sa, su
-saytime2:times = 19:15, 19:20
-
-
-light1on:command = switch on the light in the kitchen
-light1on:days = mo, tu, we, th, fr, sa, su
-light1on:times = 06:00, 19:00
-
-light1off:command = switch off the light in the kitchen
-light1off:days = mo, tu, we, th, fr, sa, su
-light1off:times = 07:00, 22:00
-
-light2on:command = switch on the light in the living room
-light2on:days = mo, we, fr, su
-light2on:times = 20:00
-
-light2off:command = switch off the light in the living room
-light2off:days = mo, we, fr, su
-light2off:times = 23:00
-
-irrigationon:command = switch on the irrigation
-irrigationon:days = mo, we, fr
-irrigationon:times = 22:00
-
-irrigationoff:command = switch off the irrigation
-irrigationoff:days = mo, we, fr
-irrigationoff:times = 22:30
-
-
-
-
-# These sections are for sentences and sentence snippets
-# for each supported language.
-# In the skill-action code these can be accessed such as:
-# publish_say(:skill_echo, "my new skill")
-#
 [de]
-:i_will_schedule = ich programmiere das profil
-:from =       vom
-:to =         bis
-:end_before_start = Das geht so nicht! Das Ende liegt vor dem Anfang!
-:end_before_start = Das Enddatum darf nicht vor dem Anfangsdatum liegen!
-:no_dates =   Ich konnte nicht verstehen, von wann bis wann ich Programmieren soll.
-:no_profile = Ich konnte nicht verstehen, welches Profil ich Programmieren soll.
-:i_heard =     verstanden habe ich
-:incomplete_profile_1 = die Aktion 
-:incomplete_profile_2 = ist unvollständig konfiguriert.
-:check_profile = bitte prüfe das gewünschte Profil.
-:end_say = fertig
+bbq_info_1 = ich gebe dir ein Startsignal und 4 weitere Signale, nach jeweils
+bbq_info_2 = Sekunden.
+bbq_info_3 = gleich geht es los.
 
-# names of profiles:
-#
-:irrigation = Bewässerung
-:summer = Sommer
-:winter = Winter
-:default = Standard
+bbq_1 = Beim Signal Steaks auflegen
+bbq_1 = Beim Ton Steaks auflegen
+bbq_1 = Beim Signal beginnen
+
+bbq_2 = beim nächsten Ton um 45 Grad drehen
+bbq_2 = beim Signal um 45 Grad drehen
+bbq_2 = Bis zum Signal warten, dann um 45 Grad drehen
+
+bbq_3 = beim nächsten Ton wenden
+bbq_3 = nach dem nächsten Ton die Steaks wenden
+bbq_3 = beim nächsten Signal die Steaks wenden
+
+bbq_4 = Nach dem nächesten Signal ein letztes mal um 45 Grad drehen.
+bbq_4 = Nach dem nächesten Ton ein letztes mal um 45 Grad drehen.
+bbq_4 = Beim nächesten Ton ein letztes mal um 45 Grad drehen.
+
+bbq_5 = Nach der letzten Wartezeit Steaks vom Grill nehmen oder die Hitze abschalten
+bbq_5 = Beim nächsten Ton Steaks vom Grill nehmen oder die Hitze abschalten
+bbq_5 = Beim nächsten Signal Steaks vom Grill nehmen oder die Hitze abschalten
+
+bbq_6 = Jetzt nur noch reifen lassen bis der Gargrad stimmt.
+bbq_6 = Jetzt noch warten bis der Gargrad erreicht ist
+bbq_6 = jetzt ist es noch sehr medium. Warte etwas bis der richtige Gargrad erreicht ist.
+bbq_6 = lass die Steaks noch etwas reifen bis der Gargrad stimmt.
+bbq_6 = wenn es nicht ganz blutig sein soll, dann die Steaks noch etwas reifen lassen.
+
+bbq_stop = Guten Apetit
+bbq_stop = lass es dir schmecken
+bbq_stop = guten Hunger
 
 [en]
-:skill_echo =  hello, i am the Hermes skill
-:slot_echo_1 = the value of the slot
-:slot_echo_2 = is
-:end_say =     and done
-:ask_echo_slots = do you want me to list the slots of this intent?
-:no_slots =    the intent has no slots
+bbq_info_1 = I will give you a start signal and 4 more signals, after each
+bbq_info_2 = seconds
+bba_info_3 = ready to go
 
+bbq_1 = put steaks on the grill
+bbq_1 = put steaks on the grill when you hear the signal
+bbq_1 = start when you hear the signal
+
+bbq_2 = after the next signal turn 45 degrees
+bbq_2 = turn 45 degrees when you hear the signal
+bbq_2 = wait until you hear the signal, then turn 45 degrees
+
+bbq_3 = at the next signal turn upside down
+bbq_3 = turn upside down when you hear the signal
+bbq_3 = turn upside down when you hear the sound
+
+bbq_4 = after the next signal turn 45 degrees again
+bbq_4 = turn 45 degrees again when you hear the signal
+bbq_4 = turn 45 degrees again when you hear the sound
+
+bbq_5 = after the last signal take steaks off the grill or turn off the heat 
+
+bbq_6 = let the steaks ripen until the degree of doneness is right.
+
+bbq_stop = Enjoy your meal
+bbq_stop = bon appetit
 
