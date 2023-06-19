@@ -24,10 +24,10 @@ This function will be executed when the intent is recognized.
 function Susi_BBQtimer_action(topic, payload)
 
     print_log("action Susi_BBQtimer_action() started.")
-    publish_say(:skill_echo, get_intent(payload))
 
     default_time = get_config_skill(CONFIG_BBQ_TIME, default=90, cast_to=Int)
-    round_time = extract_slot_value(SLOT_BBQ_TIME, payload, default=default_time)
+    round_time = extract_slot_value(SLOT_BBQ_TIME, payload, 
+                    default=default_time, as=Int)
     wait_time = round_time / 2
 
     sound_wav = get_config_skill(CONFIG_BBQ_SIGNAL, default="bing.wav", cast_to=String)
