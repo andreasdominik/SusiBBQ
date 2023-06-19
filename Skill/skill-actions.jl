@@ -28,7 +28,8 @@ function Susi_BBQtimer_action(topic, payload)
     @show default_time = get_config_skill(CONFIG_BBQ_TIME, default=90, cast_to=Int)
     @show round_time = extract_slot_value(SLOT_BBQ_TIME, payload, 
                     default=default_time, as=Int)
-    @show wait_time = round_time / 2
+    info_delay = 10
+    @show wait_time = round_time -info_delay
 
     @show sound_wav = get_config_skill(CONFIG_BBQ_SIGNAL, default="bing.wav")
     @show sound_wav = joinpath(get_appdir(), "assets", sound_wav)
@@ -38,27 +39,29 @@ function Susi_BBQtimer_action(topic, payload)
     # run beep sequence:
     #
     sleep(2)
-    publish_say(:bbq_1, wait=true)
+    # intro:
+    #
+    publish_say(:bbq_1, wait=false)
     sleep(5)
 
     publish_play(sound_wav, wait=false)
 
-    sleep(wait_time)
+    sleep(info_delay)
     publish_say(:bbq_2, wait=false)
     sleep(wait_time)
     
     publish_play(sound_wav, wait=false)
-    sleep(wait_time)
+    sleep(info_delay)
     publish_say(:bbq_3, wait=false)
     sleep(wait_time)
     
     publish_play(sound_wav, wait=false)
-    sleep(wait_time)
+    sleep(info_delay)
     publish_say(:bbq_4, wait=false)
     sleep(wait_time)
     
     publish_play(sound_wav, wait=false)
-    sleep(wait_time)
+    sleep(info_delay)
     publish_say(:bbq_5, wait=false)
     sleep(wait_time)
     
