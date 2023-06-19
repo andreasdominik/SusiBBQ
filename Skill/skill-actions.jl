@@ -30,7 +30,7 @@ function Susi_BBQtimer_action(topic, payload)
                     default=default_time, as=Int)
     @show wait_time = round_time / 2
 
-    @show sound_wav = get_config_skill(CONFIG_BBQ_SIGNAL, default="bing.wav", cast_to=String)
+    @show sound_wav = get_config_skill(CONFIG_BBQ_SIGNAL, default="bing.wav")
     @show sound_wav = joinpath(get_appdir(), "assets", sound_wav)
 
     puplish_say(:bbq_info_1, round_time, :bbq_info_2, :bbq_info_3)
