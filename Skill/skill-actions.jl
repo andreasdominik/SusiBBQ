@@ -28,8 +28,8 @@ function Susi_BBQtimer_action(topic, payload)
     @show default_time = get_config_skill(CONFIG_BBQ_TIME, default=90, cast_to=Int)
     @show round_time = extract_slot_value(SLOT_BBQ_TIME, payload, 
                     default=default_time, as=Int)
-    info_delay = 10
-    @show wait_time = round_time -info_delay
+    @show info_delay = 10
+    @show wait_time = round_time - info_delay
 
     @show sound_wav = get_config_skill(CONFIG_BBQ_SIGNAL, default="bing.wav")
     @show sound_wav = joinpath(get_appdir(), "assets", sound_wav)
