@@ -22,7 +22,7 @@
 this_skill_name = SusiBBQ
 
 bbq_time = 90
-bbq_signal = beep4.wav
+bbq_signal = beeps4.wav
 
 [de]
 bbq_info_1 = ich gebe dir ein Startsignal und 4 weitere Signale, nach jeweils
@@ -41,9 +41,9 @@ bbq_3 = beim nächsten Ton wenden
 bbq_3 = nach dem nächsten Ton die Steaks wenden
 bbq_3 = beim nächsten Signal die Steaks wenden
 
-bbq_4 = Nach dem nächesten Signal ein letztes mal um 45 Grad drehen.
-bbq_4 = Nach dem nächesten Ton ein letztes mal um 45 Grad drehen.
-bbq_4 = Beim nächesten Ton ein letztes mal um 45 Grad drehen.
+bbq_4 = Nach dem nächsten Signal ein letztes mal um 45 Grad drehen.
+bbq_4 = Nach dem nächsten Ton ein letztes mal um 45 Grad drehen.
+bbq_4 = Beim nächsten Ton ein letztes mal um 45 Grad drehen.
 
 bbq_5 = Nach der letzten Wartezeit Steaks vom Grill nehmen oder die Hitze abschalten
 bbq_5 = Beim nächsten Ton Steaks vom Grill nehmen oder die Hitze abschalten
